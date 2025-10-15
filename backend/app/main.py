@@ -16,7 +16,10 @@ app = FastAPI(
 # CORS Configuration
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
+    allow_origins=[
+        "https://tao-sdlc-automation-yq3j.vercel.app",
+        "https://historiographical-uninjuriously-doreatha.ngrok-free.dev"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
