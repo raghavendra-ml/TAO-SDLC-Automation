@@ -1,8 +1,22 @@
 import axios from 'axios'
 import { Project, Phase, Approval, AIQuery, AIResponse } from '../types'
 
+// Read the VITE_API_BASE_URL env var exposed by Vite (must be prefixed with VITE_)
+// Normalize it so that the final baseURL points to the backend's '/api' root
+// - If VITE_API_BASE_URL is empty, use '/api' (dev-server proxy)
+// - If VITE_API_BASE_URL is provided (e.g. https://abcd.ngrok-free.dev),
+//   ensure the URL ends with '/api' so requests to '/ai/...' become 'https://.../api/ai/...'
+const rawBase = (import.meta.env.VITE_API_BASE_URL as string) || ''
+let clientBase: string
+if (rawBase && rawBase.trim().length > 0) {
+  const noTrailing = rawBase.replace(/\/+$/, '')
+  clientBase = noTrailing.endsWith('/api') ? noTrailing : `${noTrailing}/api`
+} else {
+  clientBase = '/api'
+}
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: clientBase,
   headers: {
     'Content-Type': 'application/json',
   },

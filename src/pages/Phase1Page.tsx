@@ -6,6 +6,7 @@ import toast from 'react-hot-toast'
 import SelectStakeholderModal from '../components/modals/SelectStakeholderModal'
 import RequirementUploader from '../components/DocumentUpload/RequirementUploader'
 import GherkinViewer from '../components/Requirements/GherkinViewer'
+import AIChatPanel from '../components/AICopilot/AIChatPanel'
 
 interface Requirement {
   id: number

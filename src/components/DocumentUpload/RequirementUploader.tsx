@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react'
 import { Upload, FileText, FileSpreadsheet, X, Loader2, CheckCircle, AlertCircle } from 'lucide-react'
 import toast from 'react-hot-toast'
-import axios from 'axios'
+import api from '../../services/api'
 
 interface RequirementUploaderProps {
   projectId: number
@@ -104,8 +104,8 @@ const RequirementUploader = ({ projectId, phaseId, onExtractComplete }: Requirem
       // Update file status to uploading
       setFiles(prev => prev.map(f => ({ ...f, status: 'uploading' as const, progress: 50 })))
 
-      const response = await axios.post(
-        'http://localhost:8000/api/ai/extract-requirements',
+      const response = await api.post(
+        '/ai/extract-requirements',
         formData,
         {
           headers: {
