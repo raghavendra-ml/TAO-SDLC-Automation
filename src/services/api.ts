@@ -111,14 +111,4 @@ export const logout = () => api.post('/auth/logout')
 
 export default api
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=[
-        "https://tao-sdlc-automation-yq3j.vercel.app",
-        "https://historiographical-uninjuriously-doreatha.ngrok-free.dev"
-    ],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
 
