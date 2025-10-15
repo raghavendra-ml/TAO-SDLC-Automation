@@ -293,4 +293,3 @@ const RequirementUploader = ({ projectId, phaseId, onExtractComplete }: Requirem
 }
 
 export default RequirementUploader
-
