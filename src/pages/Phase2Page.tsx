@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { Calendar, Target, Users, TrendingUp, ListChecks, Loader2, Plus, ChevronDown, ChevronUp } from 'lucide-react'
 import { getProjectPhases, generateContent, updatePhase, getProject } from '../services/api'
 import toast from 'react-hot-toast'
-import { useProjectStore } from '../store/projectStore'
 
 interface Epic {
   id: number
@@ -31,8 +30,6 @@ interface UserStory {
 const Phase2Page = () => {
   const { projectId } = useParams<{ projectId: string }>()
   const navigate = useNavigate()
-  const { currentProject } = useProjectStore()
-  
   const [epics, setEpics] = useState<Epic[]>([])
   const [userStories, setUserStories] = useState<UserStory[]>([])
   const [phase1Data, setPhase1Data] = useState<any>(null)

@@ -2,10 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Plus, FolderOpen, Activity, Trash2, Download, Settings, CheckCircle, XCircle, RefreshCw } from 'lucide-react'
 import { getProjects, deleteProject } from '../services/api'
-import { Project } from '../types'
 import { useProjectStore } from '../store/projectStore'
 import CreateProjectModal from '../components/modals/CreateProjectModal'
-import AIChatPanel from '../components/AICopilot/AIChatPanel'
 import toast from 'react-hot-toast'
 
 const Dashboard = () => {

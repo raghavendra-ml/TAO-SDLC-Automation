@@ -1,5 +1,5 @@
 import { Link, useLocation } from 'react-router-dom'
-import { Home, FolderOpen, CheckCircle, Activity } from 'lucide-react'
+import { Home, FolderOpen, CheckCircle } from 'lucide-react'
 import { useProjectStore } from '../../store/projectStore'
 import PhaseNavigator from '../phase/PhaseNavigator'
 

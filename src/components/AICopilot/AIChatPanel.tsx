@@ -1,7 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send, Bot, User, Loader2, X, Minimize2, Maximize2, Sparkles } from 'lucide-react'
 import axios from 'axios'
-import { useLocation } from 'react-router-dom'
 
 interface Message {
   id: string
@@ -24,9 +23,8 @@ const AIChatPanel = ({ projectId, phaseId }: AIChatPanelProps) => {
   const [inputValue, setInputValue] = useState('')
   const [isLoading, setIsLoading] = useState(false)
   const messagesEndRef = useRef<HTMLDivElement>(null)
-  const location = useLocation()
 
-  // Determine context type based on location
+  // Determine context type based on projectId
   const contextType = projectId ? 'project' : 'dashboard'
 
   // Welcome message based on context

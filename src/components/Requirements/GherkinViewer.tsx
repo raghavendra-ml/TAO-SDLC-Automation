@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Check, X, Edit3, Trash2, Copy, Download } from 'lucide-react'
+import { Check, Trash2, Copy, Download } from 'lucide-react'
 import toast from 'react-hot-toast'
 
 interface GherkinRequirement {

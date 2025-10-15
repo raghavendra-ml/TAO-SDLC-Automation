@@ -31,7 +31,7 @@ const PhaseNavigator = () => {
     <div className="p-4">
       <h3 className="text-sm font-semibold text-gray-500 uppercase mb-4">Phase Progress</h3>
       <div className="space-y-2">
-        {phases.map((phase, index) => (
+        {phases.map((phase) => (
           <Link
             key={phase.id}
             to={`/projects/${projectId}/phase${phase.phase_number}`}

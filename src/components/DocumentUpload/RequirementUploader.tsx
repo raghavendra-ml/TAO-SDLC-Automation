@@ -20,14 +20,6 @@ const RequirementUploader = ({ projectId, phaseId, onExtractComplete }: Requirem
   const [files, setFiles] = useState<UploadedFile[]>([])
   const [isDragging, setIsDragging] = useState(false)
   const [isExtracting, setIsExtracting] = useState(false)
-
-  const acceptedFileTypes = {
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet': ['.xlsx'],
-    'application/vnd.ms-excel': ['.xls'],
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document': ['.docx'],
-    'application/msword': ['.doc'],
-    'text/plain': ['.txt'],
-    'text/csv': ['.csv']
   }
 
   const getFileIcon = (fileName: string) => {
