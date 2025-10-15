@@ -1,2 +1,0 @@
-# TAO SDLC Backend Application
-
