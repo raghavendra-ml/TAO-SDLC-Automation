@@ -20,7 +20,6 @@ const RequirementUploader = ({ projectId, phaseId, onExtractComplete }: Requirem
   const [files, setFiles] = useState<UploadedFile[]>([])
   const [isDragging, setIsDragging] = useState(false)
   const [isExtracting, setIsExtracting] = useState(false)
-  }
 
   const getFileIcon = (fileName: string) => {
     const ext = fileName.split('.').pop()?.toLowerCase()
